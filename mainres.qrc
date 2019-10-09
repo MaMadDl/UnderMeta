@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/add.png</file>
+        <file>icons/clear.png</file>
+        <file>icons/delete.png</file>
+        <file>icons/metadata-icon-png-8.png</file>
+    </qresource>
+</RCC>
