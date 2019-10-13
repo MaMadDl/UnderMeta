@@ -20,4 +20,4 @@ addons:
 script:
   - mkdir build && cd build
   - qmake ..
-  - make j`nproc`
+  - make -j`nproc`
