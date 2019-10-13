@@ -66,6 +66,8 @@ void exivBackend::newImage(QString path)
     ///    _scroller= new QScrollArea();
     ///    _signalOutput=new QWidget(_scroller);
     ///    QGridLayout *frame=new QGridLayout(_signalOutput);
+    ///
+    ///
 
     if(!_xmpD.empty()){
         std::cout<<"XMP Scope\n";
