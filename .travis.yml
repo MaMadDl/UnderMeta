@@ -1,0 +1,23 @@
+dist: bionic
+
+
+language: cpp
+
+compiler: 
+  - gcc
+
+sudo: false
+
+addons:
+  apt:
+    packages:
+      - libexiv2-dev
+      - libexiv2-dbg
+      - libexiv2-14
+      - qt5-default
+
+
+script:
+  - mdkir build && cd build
+  - qmake ..
+  - make j`nproc`
