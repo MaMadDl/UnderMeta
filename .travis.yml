@@ -6,15 +6,26 @@ language: cpp
 compiler: 
   - gcc
 
-sudo: false
+sudo: required
 
 addons:
   apt:
     packages:
-      - libexiv2-dev
-      - libexiv2-dbg
-      - libexiv2-14
+#      - libexiv2-dev
+#      - libexiv2-dbg
+#      - libexiv2-14
       - qt5-default
+      - git 
+      - cmake
+
+install:
+  - git clone https://github.com/Exiv2/exiv2.git
+  - cd exiv2
+  - mkdir build && cd build 
+  - cmake .. -DCMAKE_BUILD_TYPE=Release
+  - make -j`nproc`
+  - sudo make install 
+
 
 
 script:
