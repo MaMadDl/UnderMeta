@@ -53,7 +53,13 @@ void exivBackend::newImage(QString path)
             frame->addWidget(ltag,count,1,Qt::AlignLeft);
 
             ///TODO add stuff for other types
-            QPushButton *btn=new QPushButton("...");
+
+            QtMaterialFlatButton *btn=new QtMaterialFlatButton("...");
+            btn->setFontSize(16);
+            btn->setHaloVisible(false);
+            btn->setForegroundColor(QColor(255,255,255));
+
+            ///TODO add Button Signals connections
             frame->addWidget(btn,count,2,Qt::AlignRight);
             count++;
         }
