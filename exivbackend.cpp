@@ -20,7 +20,7 @@ void exivBackend::newImage(QString path)
     _iptcD = image->iptcData();
     if (!_exifD.empty()) {
         int count=0;
-        std::cout<<"Exif Scope\n";
+        qDebug()<<"Exif Scope\n";
         ex2::ExifData::const_iterator end=_exifD.end();
         for (ex2::ExifData::const_iterator i= _exifD.begin(); i != end; ++i) {
             if(i->tagLabel()!=""){
@@ -70,8 +70,8 @@ void exivBackend::newImage(QString path)
     _signalOutput=new QWidget(_scroller);
     frame=new QGridLayout(_signalOutput);
     if(!_xmpD.empty()){
-        std::cout<<"XMP Scope\n";
         int count=0;
+        qDebug()<<"XMP Scope\n";
         ex2::XmpData::const_iterator end=_xmpD.end();
         for (ex2::XmpData::const_iterator i= _xmpD.begin(); i != end; ++i) {
             //std::cout << i->key() << "\t" << i->typeName() << "\t" << i->count() << "\t" << "\n";
@@ -110,8 +110,8 @@ void exivBackend::newImage(QString path)
     _signalOutput=new QWidget(_scroller);
     frame=new QGridLayout(_signalOutput);
     if(!_iptcD.empty()){
-        std::cout<<"IPTC Scope\n";
         int count =0 ;
+        qDebug()<<"IPTC Scope\n";
         ex2::IptcData::const_iterator end=_iptcD.end();
         for (ex2::IptcData::const_iterator i= _iptcD.begin(); i != end; ++i) {
 //            std::cout << i->key() << "\n";
