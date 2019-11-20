@@ -106,12 +106,42 @@ void exivBackend::newImage(QString path)
     }
     }
 
+    _scroller= new QScrollArea();
+    _signalOutput=new QWidget(_scroller);
+    frame=new QGridLayout(_signalOutput);
     if(!_iptcD.empty()){
         std::cout<<"IPTC Scope\n";
+        int count =0 ;
         ex2::IptcData::const_iterator end=_iptcD.end();
         for (ex2::IptcData::const_iterator i= _iptcD.begin(); i != end; ++i) {
-            std::cout << i->key() << "\n";
+//            std::cout << i->key() << "\n";
+            if(i->tagLabel()!=""){
+                QLabel *lbl=new QLabel(QString(i->tagLabel().c_str()));
+                frame->addWidget(lbl,count,0,Qt::AlignLeft);
+            }
+            else{
+                QLabel *lbl=new QLabel(QString("0x")+QString::number(i->tag(),16));
+                frame->addWidget(lbl,count,0,Qt::AlignLeft);
+            }
+            QLabel *ltag=new QLabel(QString::fromStdString(i->print()).trimmed());
+            if(ltag->text().size()>40){
+                ltag->setText(ltag->text().remove(40,ltag->text().size()-40));
+                ltag->setWordWrap(true);
+            }
+            frame->addWidget(ltag,count,1,Qt::AlignLeft);
+
+            QtMaterialFlatButton *btn=new QtMaterialFlatButton("...");
+            btn->setFontSize(16);
+            btn->setHaloVisible(false);
+            btn->setForegroundColor(QColor(255,255,255));
+
+            ///TODO add Button Signals connections
+            frame->addWidget(btn,count,2,Qt::AlignRight);
+            count++;
         }
+        _scroller->setWidget(_signalOutput);
+        emit MetaTypeDone(_scroller,3);
+    }
     }
     }
     catch(ex2::AnyError& e)
