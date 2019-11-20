@@ -19,10 +19,13 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
+    <property name="topMargin">
+     <number>0</number>
+    </property>
     <item row="0" column="2" rowspan="2">
      <widget class="QGroupBox" name="AddMetaGroup">
       <property name="title">
-       <string>Other Metadata</string>
+       <string/>
       </property>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
@@ -52,7 +55,7 @@
         </spacer>
        </item>
        <item row="0" column="1">
-        <widget class="QPushButton" name="AddMetaButt">
+        <widget class="QtMaterialFlatButton" name="AddMetaButt">
          <property name="minimumSize">
           <size>
            <width>80</width>
@@ -72,10 +75,20 @@
           <iconset resource="mainres.qrc">
            <normaloff>:/icons/icons/add.png</normaloff>:/icons/icons/add.png</iconset>
          </property>
+         <property name="foregroundColor" stdset="0">
+          <color>
+           <red>78</red>
+           <green>154</green>
+           <blue>6</blue>
+          </color>
+         </property>
+         <property name="isHaloVisible" stdset="0">
+          <bool>false</bool>
+         </property>
         </widget>
        </item>
        <item row="0" column="3">
-        <widget class="QPushButton" name="DelMetButt">
+        <widget class="QtMaterialFlatButton" name="DelMetButt">
          <property name="minimumSize">
           <size>
            <width>81</width>
@@ -88,12 +101,25 @@
            <height>25</height>
           </size>
          </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
           <iconset resource="mainres.qrc">
            <normaloff>:/icons/icons/clear.png</normaloff>:/icons/icons/clear.png</iconset>
+         </property>
+         <property name="isHaloVisible" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="foregroundColor" stdset="0">
+          <color>
+           <red>204</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
          </property>
         </widget>
        </item>
@@ -135,7 +161,7 @@
       </property>
       <layout class="QGridLayout" name="gridLayout">
        <item row="0" column="0">
-        <widget class="QLineEdit" name="OpenLine">
+        <widget class="QtMaterialTextField" name="OpenLine">
          <property name="text">
           <string/>
          </property>
@@ -145,7 +171,7 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QLineEdit" name="SaveLine">
+        <widget class="QtMaterialTextField" name="SaveLine">
          <property name="text">
           <string/>
          </property>
@@ -154,27 +180,8 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="2">
-        <widget class="QCheckBox" name="OverwriteCheck">
-         <property name="minimumSize">
-          <size>
-           <width>109</width>
-           <height>23</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>109</width>
-           <height>23</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Overwrite</string>
-         </property>
-        </widget>
-       </item>
        <item row="0" column="2" alignment="Qt::AlignHCenter">
-        <widget class="QPushButton" name="PurgeMetaButt">
+        <widget class="QtMaterialFlatButton" name="PurgeMetaButt">
          <property name="minimumSize">
           <size>
            <width>129</width>
@@ -190,10 +197,20 @@
          <property name="text">
           <string>Purge All Meta</string>
          </property>
+         <property name="isHaloVisible" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="foregroundColor" stdset="0">
+          <color>
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
         </widget>
        </item>
        <item row="2" column="0" alignment="Qt::AlignLeft">
-        <widget class="QPushButton" name="OpenButt">
+        <widget class="QtMaterialFlatButton" name="OpenButt">
          <property name="minimumSize">
           <size>
            <width>80</width>
@@ -209,10 +226,20 @@
          <property name="text">
           <string>Open</string>
          </property>
+         <property name="foregroundColor" stdset="0">
+          <color>
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="isHaloVisible" stdset="0">
+          <bool>false</bool>
+         </property>
         </widget>
        </item>
        <item row="2" column="2" alignment="Qt::AlignHCenter">
-        <widget class="QPushButton" name="SaveButt">
+        <widget class="QtMaterialFlatButton" name="SaveButt">
          <property name="minimumSize">
           <size>
            <width>80</width>
@@ -228,10 +255,20 @@
          <property name="text">
           <string>Save</string>
          </property>
+         <property name="foregroundColor" stdset="0">
+          <color>
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="isHaloVisible" stdset="0">
+          <bool>false</bool>
+         </property>
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QPushButton" name="OpenBrowse">
+        <widget class="QtMaterialFlatButton" name="OpenBrowse">
          <property name="minimumSize">
           <size>
            <width>26</width>
@@ -246,11 +283,24 @@
          </property>
          <property name="text">
           <string>...</string>
+         </property>
+         <property name="isHaloVisible" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="foregroundColor" stdset="0">
+          <color>
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="fontSize" stdset="0">
+          <number>16</number>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QPushButton" name="SaveBrowse">
+        <widget class="QtMaterialFlatButton" name="SaveBrowse">
          <property name="minimumSize">
           <size>
            <width>26</width>
@@ -265,6 +315,45 @@
          </property>
          <property name="text">
           <string>...</string>
+         </property>
+         <property name="isHaloVisible" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="foregroundColor" stdset="0">
+          <color>
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="fontSize" stdset="0">
+          <number>16</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QtMaterialFlatButton" name="OverwriteCheck">
+         <property name="minimumSize">
+          <size>
+           <width>129</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>129</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Overwrite</string>
+         </property>
+         <property name="foregroundColor" stdset="0">
+          <color>
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
          </property>
         </widget>
        </item>
@@ -337,6 +426,18 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QtMaterialFlatButton</class>
+   <extends>QPushButton</extends>
+   <header>qtmaterialflatbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QtMaterialTextField</class>
+   <extends>QLineEdit</extends>
+   <header>qtmaterialtextfield.h</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>OpenLine</tabstop>
   <tabstop>OpenBrowse</tabstop>
