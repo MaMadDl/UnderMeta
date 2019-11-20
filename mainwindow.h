@@ -32,8 +32,11 @@ private slots:
 
     void on_actionExit_triggered();
 
+    void on_OverwriteCheck_toggled(bool checked);
+
 private:
     bool _firstTime;
+    bool _overwrite;
     Ui::MainWindow *ui;
     exivBackend exifMeta;
     QString filePath;

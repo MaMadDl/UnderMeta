@@ -4,10 +4,13 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     _firstTime(false),
+    _overwrite(false),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 //    qRegisterMetaType<QScrollArea>("QScrollArea");
+    ui->OverwriteCheck->applyPreset(Material::CheckablePreset);
+//    ui->ReadMetaWidget->addTab("");
     connect(this,SIGNAL(pushImagePath(QString)),&exifMeta,SLOT(newImage(QString)));
     connect(&exifMeta ,SIGNAL(MetaTypeDone(QScrollArea*,int)),this,SLOT(handleTabsFromBackends(QScrollArea*,int)));
     filePath=QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
@@ -80,4 +83,9 @@ void MainWindow::on_OpenBrowse_clicked()
 void MainWindow::on_actionExit_triggered()
 {
     QApplication::quit();
+}
+
+void MainWindow::on_OverwriteCheck_toggled(bool checked)
+{
+    _overwrite=checked;
 }
