@@ -65,6 +65,15 @@ void exivBackend::newImage(QString path)
         _scroller->setWidget(_signalOutput);
         emit MetaTypeDone(_scroller,1);
     }
+    else{
+        QLabel *nf= new QLabel();
+        nf->setText("No Exif Record Found"); //TODO change Fonts and stuff
+        _scroller->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        frame->addWidget(nf,0,0, Qt::AlignHCenter | Qt::AlignVCenter);
+//        frame->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        _scroller->setWidget(_signalOutput);
+        emit MetaTypeDone(_scroller,1);
+    }
     //reInitilize for next use
     _scroller= new QScrollArea();
     _signalOutput=new QWidget(_scroller);
@@ -104,6 +113,13 @@ void exivBackend::newImage(QString path)
         _scroller->setWidget(_signalOutput);
         emit MetaTypeDone(_scroller,2);
     }
+    else {
+        QLabel *nf= new QLabel();
+        nf->setText("No XMP Record Found");
+        _scroller->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        frame->addWidget(nf,0,0, Qt::AlignHCenter | Qt::AlignVCenter);
+        _scroller->setWidget(_signalOutput);
+        emit MetaTypeDone(_scroller,2);
     }
 
     _scroller= new QScrollArea();
@@ -142,6 +158,13 @@ void exivBackend::newImage(QString path)
         _scroller->setWidget(_signalOutput);
         emit MetaTypeDone(_scroller,3);
     }
+    else{
+        QLabel *nf= new QLabel();
+        nf->setText("No IPTC Record Found");
+        _scroller->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+        frame->addWidget(nf,0,0, Qt::AlignHCenter | Qt::AlignVCenter);
+        _scroller->setWidget(_signalOutput);
+        emit MetaTypeDone(_scroller,3);
     }
     }
     catch(ex2::AnyError& e)

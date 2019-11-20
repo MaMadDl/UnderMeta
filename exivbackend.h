@@ -7,10 +7,12 @@
 #include <exiv2/image.hpp>
 #include <exiv2/error.hpp>
 
+#include <QDebug>
 #include <QGridLayout>
 #include <QPushButton>
 #include <QLabel>
 #include <QScrollArea>
+#include <qtmaterialflatbutton.h>
 
 namespace ex2 = Exiv2;
 
