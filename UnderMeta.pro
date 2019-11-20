@@ -56,3 +56,18 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     mainres.qrc \
     darkstyle.qrc
+
+### for libcomponent.a
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/material-widget/lib/release/ -lcomponents
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/material-widget/lib/debug/ -lcomponents
+else:unix: LIBS += -L$$PWD/material-widget/lib/ -lcomponents
+
+INCLUDEPATH += $$PWD/material-widget/include
+DEPENDPATH += $$PWD/material-widget/include
+
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/material-widget/lib/release/libcomponents.a
+else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/material-widget/lib/debug/libcomponents.a
+else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/material-widget/lib/release/components.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/material-widget/lib/debug/components.lib
+else:unix: PRE_TARGETDEPS += $$PWD/material-widget/lib/libcomponents.a
+### --------------
