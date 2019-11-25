@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(this,SIGNAL(pushImagePath(QString)),&exifMeta,SLOT(newImage(QString)));
     connect(&exifMeta ,SIGNAL(MetaTypeDone(QScrollArea*,int)),this,SLOT(handleTabsFromBackends(QScrollArea*,int)));
     filePath=QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
+    _extention="";
 
     /*
     QScrollArea *mainArea=new QScrollArea();
@@ -77,6 +78,7 @@ void MainWindow::on_OpenBrowse_clicked()
                                               "All Files (*.*)");
     ui->OpenLine->setText(Path);
     filePath=QFileInfo(Path).path();
+    _extention =QFileInfo(Path).suffix();
 
 }
 

@@ -35,11 +35,13 @@ private slots:
     void on_OverwriteCheck_toggled(bool checked);
 
 private:
+
     bool _firstTime;
     bool _overwrite;
     Ui::MainWindow *ui;
     exivBackend exifMeta;
     QString filePath;
+    QString _extention;
 };
 
 #endif // MAINWINDOW_H
