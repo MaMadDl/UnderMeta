@@ -71,6 +71,10 @@ void MainWindow::on_OpenButt_clicked()
         }
     }
     ///TODO Add extention seperation
+    ///
+    QtMaterialDialog *err=new QtMaterialDialog();
+    err->showDialog();
+
 
 }
 

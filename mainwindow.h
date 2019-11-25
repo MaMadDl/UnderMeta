@@ -7,6 +7,7 @@
 #include <QDebug>
 
 #include "exivbackend.h"
+#include <qtmaterialdialog.h>
 
 const std::vector<QString> exivlist={"jpeg","jpg","png","tiff","orf","webp",
                                             "dng","nef","pef","srw","exv","cr2","crw",
