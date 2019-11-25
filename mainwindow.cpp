@@ -64,9 +64,14 @@ void MainWindow::handleTabsFromBackends(QScrollArea* tab, int index)
 
 void MainWindow::on_OpenButt_clicked()
 {
+    foreach (QString x, exivlist) {
+        if(_extention==x){
+            emit pushImagePath(ui->OpenLine->text());
+            return;
+        }
+    }
     ///TODO Add extention seperation
 
-    emit pushImagePath(ui->OpenLine->text());
 }
 
 void MainWindow::on_OpenBrowse_clicked()

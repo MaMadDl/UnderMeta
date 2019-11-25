@@ -8,6 +8,10 @@
 
 #include "exivbackend.h"
 
+const std::vector<QString> exivlist={"jpeg","jpg","png","tiff","orf","webp",
+                                            "dng","nef","pef","srw","exv","cr2","crw",
+                                            "pgf","psd","jp2"};
+
 namespace Ui {
 class MainWindow;
 }
